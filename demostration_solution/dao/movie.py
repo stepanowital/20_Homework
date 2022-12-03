@@ -1,7 +1,6 @@
 from dao.model.movie import Movie
 
 
-
 class MovieDAO:
     def __init__(self, session):
         self.session = session
