@@ -41,7 +41,11 @@ class TestMovieService:
 
 		assert movie is None
 
-	# def test_partially_update(self):
-	# 	movie_d = {"id": 1, "name": "Baron1"}
-	# 	assert self.movie_service.partially_update(movie_d)
+	def test_partially_update(self):
+		movie_d = {"id": 4, "description": "Описание4"}
+
+		movie = self.movie_service.partially_update(movie_d)
+
+		assert movie is not None
+		assert movie.description == "Описание4"
 

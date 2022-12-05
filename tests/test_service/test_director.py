@@ -41,7 +41,10 @@ class TestDirectorService:
 
 		assert director is None
 
-	# def test_partially_update(self):
-	# 	director = self.director_service.get_one(1)
-	#
-	# 	assert self.director_service.partially_update(director)
+	def test_partially_update(self):
+		director_d = {"id": 1, "name": "ФонБарон"}
+
+		director = self.director_service.partially_update(director_d)
+
+		assert director is not None
+		assert director.name == "ФонБарон"

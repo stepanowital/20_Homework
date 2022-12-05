@@ -18,7 +18,10 @@ class MovieService:
         return self.dao.update(movie_d)
 
     def partially_update(self, movie_d):
-        movie = self.get_one(movie_d["id"])
+        movie = self.dao.get_one(movie_d["id"])
+
+        print(movie.id)
+
         if "title" in movie_d:
             movie.title = movie_d.get("title")
         if "description" in movie_d:
@@ -34,6 +37,7 @@ class MovieService:
         if "director_id" in movie_d:
             movie.director_id = movie_d.get("director_id")
         self.dao.update(movie)
+        return movie
 
     def delete(self, rid):
         self.dao.delete(rid)
