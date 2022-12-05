@@ -18,7 +18,7 @@ class MovieService:
         return self.dao.update(movie_d)
 
     def partially_update(self, movie_d):
-        movie = self.dao.get_one(movie_d["id"])
+        movie = self.get_one(movie_d["id"])
 
         print(movie.id)
 
